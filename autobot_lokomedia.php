@@ -1,4 +1,9 @@
 <?php
+// auto dorking
+// auto inject lokomedia
+// c0ded by shutdown57
+// fb.com/JKT48.co
+
 set_time_limit(0);
 
 function getsource($url) {
@@ -32,8 +37,7 @@ if(isset($dork)) {
 	$array = array_filter($URLs);
 	$array = array_unique($array);
 	$sss = count(array_unique($array));
-	//echo "ToTaL SiTe : $sss\n";
-	//echo "--------------------------------------\n";
+	echo "[+] Getting [ $sss ] Sites .... \n\n";
 	foreach($array as $domain) {
 	$s= "http://$domain/\n";
 	$fp = fopen($nama,"a");
