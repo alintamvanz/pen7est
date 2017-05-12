@@ -1,2 +1,26 @@
+isla@indonesianpeople:~ $ wget https://raw.githubusercontent.com/alintamvanz/pen7est/master/mhank.txt
+--2017-05-12 14:52:24--  https://raw.githubusercontent.com/alintamvanz/pen7est/master/mhank.txt
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.8.133
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.8.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 111 [text/plain]
+Saving to: ‘mhank.txt’
+
+mhank.txt                                  100%[=====================================================================================>]     111  --.-KB/s    in 0s      
+
+2017-05-12 14:52:27 (12,5 MB/s) - ‘mhank.txt’ saved [111/111]
+
+isla@indonesianpeople:~ $ mv mhank.txt galau.txt
+isla@indonesianpeople:~ $ cat galau.txt 
 Akhirnya ada yang mengetahui kesendirianku selama ini
 Akhirnya juga ada yang mengerti di balik senyumku ini :)
+isla@indonesianpeople:~ $ figlet "shutdown57 :*" | lolcat
+     _           _      _                     ____ _____          
+ ___| |__  _   _| |_ __| | _____      ___ __ | ___|___  |  ___/\__
+/ __| '_ \| | | | __/ _` |/ _ \ \ /\ / / '_ \|___ \  / /  (_)    /
+\__ \ | | | |_| | || (_| | (_) \ V  V /| | | |___) |/ /    _/_  _\
+|___/_| |_|\__,_|\__\__,_|\___/ \_/\_/ |_| |_|____//_/    (_) \/  
+                                                                  
+isla@indonesianpeople:~ $ echo "Greets : Your Self :"
+Greets : Your Self :
+isla@indonesianpeople:~ $ 
