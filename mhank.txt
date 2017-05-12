@@ -23,4 +23,4 @@ isla@indonesianpeople:~ $ figlet "shutdown57 :*" | lolcat
                                                                   
 isla@indonesianpeople:~ $ echo "Greets : Your Self :"
 Greets : Your Self :
-isla@indonesianpeople:~ $ 
+isla@indonesianpeople:~ $ ./hacked
