@@ -3,7 +3,7 @@
 # c0ded by : shutdown57 - alinko kun
 # Thx for nice idea : RobinRoot a.k.a Bagas Homo
 # fb.com/JKT48.co
-
+resize -s 100 100 > /dev/null
 m="\033[1;31m"
 k="\033[1;33m"
 h="\033[1;32m"
@@ -74,7 +74,7 @@ printf "
 
 "$b"[!]"$n" ./jancox --email-gen       : Generate Email with your own users list and passwords list
 "$b"[!]"$n" ./jancox --email-filter    : Filter Email (gmail,yahoo,outlook,hotmail)
-"$b"[!]"$n" ./jancox --email-valid     : Check Live or die email with your email list
+"$b"[!]"$n" ./jancox --email-valid     : Check Live or die email with amazon validation
 "
 }
 s57_cekfile(){
@@ -143,14 +143,19 @@ s57_emailvalid()
 	sleep 1
 	s57t "Email list " lo
 	em=`cat $lo`
-	m=$(echo $em | tr "\n" "\n")
-	for email in $m
+	p=$(echo $em | tr "\n" "\n")
+	for ppq in $p
 	do
-		curl=`curl -s http://wibu.pro/json.php?check=$email`
-		echo $curl >> result-validmail.txt
-		s57i "Checking : "$email
+	wget -q "https://www.amazon.com/ap/register?_encoding=UTF8&openid.assoc_handle=usflex&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyourstore%2Fhome%3Fie%3DUTF8%26ref_%3Dgno_newcust?&email=${ppq}" -O tmp/azon.txt
+	cat tmp/azon.txt | grep "Create account" > /dev/null;cek=$?
+	if [[ $cek -eq 0 ]]; then
+			s57d "[ Not Valid ] : "$ppq >> log_jancokTools.txt
+	else
+			s57s "[ Valid ] : "$ppq >> log_jancokTools.txt
+			echo $ppq >> result_jancokTools.txt
+	fi
 	done
-	cat result-validmail.txt
+rm -rf tmp/azon.txt
 }
 s57_emailfilter()
 {
